@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import './LeftSideNav.css'
 
 const LeftSideNav = () => {
   const [categories, setCategories] = useState([]);
@@ -14,12 +15,21 @@ const LeftSideNav = () => {
         
       });
   }, []);
+
+
+  let activeStyle = {
+    color:"white",
+    backgroundColor: "black",
+    // borderRadius: "7px",
+  };
   
 
   return (
     <div className="d-flex flex-column">
       {
-        categories.map(category=> <NavLink key={category._id} to={`/course/details/${category._id}`}><Button className="w-100 mb-2" variant="outline-dark">{category.category_name}</Button></NavLink>)
+        categories.map(category=> <NavLink className='mb-2 py-2 ps-3 border border-dark rounded-3 link2' style={({ isActive }) =>
+        isActive ? activeStyle : undefined
+      } key={category._id} to={`/course/details/${category._id}`}>{category.category_name}</NavLink>)
       }
     </div>
   );

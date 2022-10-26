@@ -1,0 +1,15 @@
+.link2{
+    color: black;
+    /* background-color: black; */
+    text-decoration: none;
+    font-weight: 700;   
+
+}
+.link2:hover{
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    background-color: black;
+    font-weight: 700;   
+
+}
