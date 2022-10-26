@@ -1,19 +1,23 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import Course from '../Course/Course';
+import React from "react";
+import { Col, Row } from "react-bootstrap";
+import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
+import Course from "../Course/Course";
+import LeftSideNav from "../LeftSideNav/LeftSideNav";
 
 const Courses = () => {
-    const courses = useLoaderData()
-    return (
-        <div className='d-flex flex-wrap justify-content-center gap-4'>
-            {
-                courses.map(course => <Course
-                     key={course._id}
-                     course = {course}
-                     ></Course>)
-            }
-        </div>
-    );
+  
+  return (
+    // <div ">
+      <Row>
+        <Col lg="3">
+          <LeftSideNav></LeftSideNav>
+        </Col>
+        <Col lg="9">
+          <Outlet></Outlet>
+        </Col>
+      </Row>
+    // </div>
+  );
 };
 
 export default Courses;

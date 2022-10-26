@@ -1,24 +1,28 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Button, NavLink } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
 
 const LeftSideNav = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/catagories")
+    fetch("http://localhost:5000/categories")
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
-        // console.log(data)
+        
       });
   }, []);
+  
 
-  return <div className="d-flex flex-column">
-    {
-        categories.map(category => <Button key={category._id} variant="outline-dark" className="mb-2" ><NavLink key={category.id}>{category.category_name}</NavLink></Button>)
-    }
-    </div>;
+  return (
+    <div className="d-flex flex-column">
+      {
+        categories.map(category=> <NavLink key={category._id} to={`/course/details/${category._id}`}><Button className="w-100 mb-2" variant="outline-dark">{category.category_name}</Button></NavLink>)
+      }
+    </div>
+  );
 };
 
 export default LeftSideNav;
