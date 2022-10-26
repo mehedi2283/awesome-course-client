@@ -9,6 +9,7 @@ import Register from "./../../components/Login/Register/Register";
 import TermsAndConditions from "./../../components/TermsAndConditions/TermsAndConditions";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import { IoIosWarning } from "react-icons/io";
+import Blogs from './../../components/Blogs/Blogs';
 
 const { createBrowserRouter, Link } = require("react-router-dom");
 
@@ -32,6 +33,18 @@ export const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/terms",
+        element: <TermsAndConditions></TermsAndConditions>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "/f&q",
+        element: <TermsAndConditions></TermsAndConditions>,
       },
       {
         path: "/terms",

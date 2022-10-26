@@ -59,7 +59,7 @@ function Header() {
           <NavLink
             className="px-3 py-2 border border-dark rounded-3 link"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            to="/blog"
+            to="/blogs"
           >
             Blogs
           </NavLink>
