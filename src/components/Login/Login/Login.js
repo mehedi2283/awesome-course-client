@@ -8,13 +8,13 @@ import { AuthContext } from './../../../context/AuthProvider/AuthProvider';
 import {
     FaGoogle,
     FaGithub,
-    FaFacebook,
-    FaTwitter,
-    FaWhatsapp,
-    FaTwitch,
+    // FaFacebook,
+    // FaTwitter,
+    // FaWhatsapp,
+    // FaTwitch,
   } from "react-icons/fa";
 import { ButtonGroup } from "react-bootstrap";
-import { GoogleAuthProvider } from "firebase/auth";    
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";    
 
 const Login = () => {
     const navigate = useNavigate();
@@ -22,8 +22,23 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
   const { providerLogin } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  const giProvider = new GithubAuthProvider();
+
+
   const handleGoodleSignIn = () => {
     providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(`user`, user);
+        navigate(from, { replace: true });
+          toast.success("Login Successful");
+      })
+      .catch((error) => {
+        console.error(`error`, error);
+      });
+  };
+  const handleGitSignIn = () => {
+    providerLogin(giProvider)
       .then((result) => {
         const user = result.user;
         console.log(`user`, user);
@@ -139,7 +154,7 @@ const Login = () => {
         >
           <FaGoogle></FaGoogle> <strong>Login with Google</strong>
         </Button>
-        <Button variant="outline-secondary" className=" rounded">
+        <Button onClick={handleGitSignIn} variant="outline-secondary" className=" rounded">
           <FaGithub></FaGithub> <strong>Login with GitHub</strong>
         </Button>
       </ButtonGroup>

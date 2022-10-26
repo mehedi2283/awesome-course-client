@@ -1,6 +1,5 @@
 
 import './App.css';
-import Navbar from './components/Header/Header';
 import { RouterProvider } from 'react-router-dom';
 import { routes } from './Routes/Routes/Routes';
 import { Toaster } from "react-hot-toast";

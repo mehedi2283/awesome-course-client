@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
-import Course from "../Course/Course";
+import {  Outlet } from "react-router-dom";
 import LeftSideNav from "../LeftSideNav/LeftSideNav";
 
 const Courses = () => {
