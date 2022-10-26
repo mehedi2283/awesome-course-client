@@ -7,6 +7,7 @@ import RightSideCourses from "./../../components/RightSideCourses/RightSideCours
 import Login from './../../components/Login/Login/Login';
 import Register from './../../components/Login/Register/Register';
 import TermsAndConditions from './../../components/TermsAndConditions/TermsAndConditions';
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -56,7 +57,7 @@ export const routes = createBrowserRouter([
             path: "/course/details/checkout/:id",
             loader: ({ params }) =>
               fetch(`http://localhost:5000/details/checkout/${params.id}`),
-            element: <Checkout></Checkout>,
+            element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>,
           },
         ],
       },
