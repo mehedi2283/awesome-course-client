@@ -79,7 +79,7 @@ function Header() {
           </NavLink>
         </Nav>
         <Nav className="align-items-center">
-          <Link to="/profile">
+          <Link to={`${!user?'/login' :'/profile'}`}>
             {user?.photoURL ? (
               <Image
                 roundedCircle
@@ -94,7 +94,7 @@ function Header() {
             {user?.uid ? (
               <>
                 <Link to="/profile">
-                  {" "}
+                  
                   <span className="ms-2 ">{user?.displayName}</span>
                 </Link>
                 <Button
