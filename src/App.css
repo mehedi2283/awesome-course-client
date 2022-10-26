@@ -1,6 +1,15 @@
 .App {
   text-align: center;
 }
+.App a {
+  text-decoration: none;
+  color: #282c34;
+ 
+ }
+ .App a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+ }
 
 .App-logo {
   height: 40vmin;

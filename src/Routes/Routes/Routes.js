@@ -10,6 +10,7 @@ import TermsAndConditions from "./../../components/TermsAndConditions/TermsAndCo
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import { IoIosWarning } from "react-icons/io";
 import Blogs from './../../components/Blogs/Blogs';
+import FnQ from './../../components/F&Q/F&Q';
 
 const { createBrowserRouter, Link } = require("react-router-dom");
 
@@ -44,7 +45,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/f&q",
-        element: <TermsAndConditions></TermsAndConditions>,
+        element: <FnQ></FnQ>,
       },
       {
         path: "/terms",
