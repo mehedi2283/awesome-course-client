@@ -8,7 +8,7 @@ const Footer = () => (
     <div className="container-fluid text-center text-md-left ">
       <div className="row justify-content-around align-items-center">
         <div className="col-md-6 mt-md-0 mt-3">
-          <h5 className="text-uppercase">Awesome News</h5>
+          <h5 className="text-uppercase">Awesome Course</h5>
         </div>
 
         <hr className="clearfix w-100 d-md-none pb-0" />
@@ -68,7 +68,7 @@ const Footer = () => (
 
     <div className="footer-copyright text-center py-3">
       © 2022 Copyright:
-      <Link to="./home"> Awesome_News.com</Link>
+      <Link to="./home"> Awesome_Course.com</Link>
     </div>
   </footer>
 );

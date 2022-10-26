@@ -24,7 +24,7 @@ const Details = () => {
             </div>
             <h5>Price: {details.price}</h5>
         </div>
-        <NavLink to={`/course/details/checkout/${details._id}`}><Button className="w-100" variant="outline-dark">Click here for Checkout</Button></NavLink>
+        <NavLink to={`/course/details/checkout/${details._id}`}><Button className="w-100" variant="outline-dark">Get Premium Access</Button></NavLink>
       </Card.Body>
     </Card>
   );
