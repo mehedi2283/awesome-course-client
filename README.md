@@ -7,4 +7,4 @@
 * made responsive for all devices
 * added dark and light mode
 * added pdf downloader
-
+* 404 route added
