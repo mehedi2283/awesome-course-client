@@ -43,7 +43,7 @@ function Header() {
 
 
   return (
-    <Navbar bg="light" expand="lg" className="mb-5" sticky="top">
+    <Navbar bg="light" expand="lg" className="mb-5 sticky-lg-top" >
       <Container className="gap-4">
         <NavLink
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -52,8 +52,12 @@ function Header() {
         >
           Awesome Course
         </NavLink>
+        <Navbar.Toggle aria-controls="basic-navbar-nav justify-content-centere" />
+        <Navbar.Collapse className="justify-content-evenly" id="basic-navbar-nav">
 
-        <Nav className="mx-auto gap-3">
+        <Nav className=" justify-content-center mb-2 gap-3  flex-xl-row">
+          <div className="d-flex gap-2 row2 ">
+
           <NavLink
             className="px-3 py-2 border border-dark rounded-3 link"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -75,6 +79,7 @@ function Header() {
           >
             F&Q
           </NavLink>
+          </div>
           <div >
       <div className="container">
         <span >☀︎</span>
@@ -86,9 +91,6 @@ function Header() {
         </div>
         <span >☽</span>
       </div>
-      {/* <div>
-        <h1>Cool its {darkMode ? "Dark" : "Light"} Mode </h1>
-      </div> */}
     </div>
         </Nav>
         <Nav className="align-items-center">
@@ -138,6 +140,7 @@ function Header() {
             )}
           </Nav>
         </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

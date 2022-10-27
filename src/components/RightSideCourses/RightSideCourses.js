@@ -7,7 +7,7 @@ const RightSideCourses = () => {
     const courses = useLoaderData();
     return (
         
-            <Col className="d-flex flex-wrap  gap-4">
+            <Col className="d-flex flex-wrap justify-content-center  gap-4">
           {courses.map((course) => (
             <NavLink
               to={`/course/details/${course._id}`}

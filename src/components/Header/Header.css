@@ -140,4 +140,21 @@
   .switch-checkbox {
     /* padding: 10px; */
   }
+
+  @media (max-width: 423px) {
+    .row{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .row2{
+        justify-content: center;
+    }
+  }
+  
+  @media (min-width: 422px) {
+   
+    .row2{
+        justify-content: center;
+    }
+  }
   

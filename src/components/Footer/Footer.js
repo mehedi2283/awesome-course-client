@@ -26,7 +26,7 @@ const Footer = () => (
                   data-placement="bottom"
                   title="Follow us on FaceBook"
                 ></FaFacebook>
-                <h4 className="">Facebook</h4>
+                <h5 className="">Facebook</h5>
               
             </Link>
             <Link className=" twitter  rounded p-1">
@@ -37,7 +37,7 @@ const Footer = () => (
                   data-placement="bottom"
                   title="Follow us on Twitter"
                 ></FaTwitter>
-                <h4 className="">Twitter</h4>
+                <h5 className="">Twitter</h5>
               
             </Link>
             <Link className=" whatsapp bg-light  rounded p-1">
@@ -48,7 +48,7 @@ const Footer = () => (
                   data-placement="bottom"
                   title="Follow us on Whatsapp"
                 ></FaWhatsapp>
-                <h4>Whatsapp</h4>
+                <h5>Whatsapp</h5>
               
             </Link>
             <Link className=" twitch bg-light  rounded p-1">
@@ -59,7 +59,7 @@ const Footer = () => (
                   data-placement="bottom"
                   title="Follow us on Twitch"
                 ></FaTwitch>
-                <h4 className="">Twitch</h4>
+                <h5 className="">Twitch</h5>
               
             </Link>
           </div>
