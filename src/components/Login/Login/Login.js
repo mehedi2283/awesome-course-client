@@ -84,7 +84,7 @@ const Login = () => {
   return (
     <Form
       onSubmit={handleSubmit}
-      className="border p-4 rounded shadow w-50 mx-auto mb-4 bg-white "
+      className="border p-4 rounded shadow  mx-auto mb-4 bg-white "
     >
       <h2 className="text-center">Login</h2>
       <hr />

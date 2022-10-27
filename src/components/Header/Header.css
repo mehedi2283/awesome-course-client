@@ -6,6 +6,7 @@
   } */
 
   .link{
+  
     color: black;
     font-weight: 700;
     text-decoration: none;
@@ -133,6 +134,7 @@
   .slider.round {
     border-radius: 34px;
   }
+  
   
   .slider.round:before {
     border-radius: 50%;

@@ -43,7 +43,7 @@ function Header() {
 
 
   return (
-    <Navbar bg="light" expand="lg" className="mb-5 sticky-lg-top" >
+    <Navbar bg="light" expand="lg" className="mb-5 sticky-top " >
       <Container className="gap-4">
         <NavLink
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
