@@ -69,7 +69,7 @@ const Login = () => {
       });
   };
   const handleGithubSignIn = () => {
-    providerLogin(googleProvider)
+    providerLogin(githubProvider)
       .then((result) => {
         const user = result.user;
         console.log(`user`, user);

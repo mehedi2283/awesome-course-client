@@ -93,7 +93,7 @@ function Header() {
       </div>
     </div>
         </Nav>
-        <Nav className="align-items-center">
+        <Nav className="align-items-center gap-2">
           <Link to={`${!user?'/login' :'/profile'}`}>
             {user?.photoURL ? (
               <Image
@@ -105,7 +105,7 @@ function Header() {
               <FaUserCircle className="text-black fs-3"></FaUserCircle>
             )}
           </Link>
-          <Nav className="fw-bold align-items-center">
+          <Nav className="fw-bold align-items-center gap-2">
             {user?.uid ? (
               <>
                 <Link to="/profile">

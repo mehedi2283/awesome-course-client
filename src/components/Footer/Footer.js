@@ -2,7 +2,6 @@ import React from "react";
 import { FaFacebook, FaTwitter, FaWhatsapp, FaTwitch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import { Button } from 'react-bootstrap';
 
 const Footer = () => (
   <footer className="page-footer font-small blue pt-4 bg-light mt-3 footer">
