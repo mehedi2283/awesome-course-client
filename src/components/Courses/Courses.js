@@ -7,7 +7,7 @@ const Courses = () => {
   
   return (
     // <div ">
-      <Row>
+      <Row >
         <Col lg="3">
           <LeftSideNav></LeftSideNav>
         </Col>

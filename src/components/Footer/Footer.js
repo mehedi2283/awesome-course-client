@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook, FaTwitter, FaWhatsapp, FaTwitch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import { Button } from 'react-bootstrap';
 
 const Footer = () => (
   <footer className="page-footer font-small blue pt-4 bg-light mt-3 footer">
@@ -17,50 +18,50 @@ const Footer = () => (
           <h5 className=" text-underline"> Our Socials</h5>
           <hr />
           <div className="list-unstyled d-flex justify-content-evenly">
-            <li className=" facebook bg-light  rounded border-0">
-              <Link>
+            <Link className=" facebook bg-light  rounded p-1">
+              
                 <FaFacebook
-                  className="fs-1 "
+                  className="fs-2 "
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Follow us on FaceBook"
                 ></FaFacebook>
                 <h4 className="">Facebook</h4>
-              </Link>
-            </li>
-            <li className=" twitter  rounded border-0">
-              <Link>
+              
+            </Link>
+            <Link className=" twitter  rounded p-1">
+              
                 <FaTwitter
-                  className="fs-1 "
+                  className="fs-2 "
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Follow us on Twitter"
                 ></FaTwitter>
                 <h4 className="">Twitter</h4>
-              </Link>
-            </li>
-            <li className=" whatsapp bg-light  rounded border-0">
-              <Link>
+              
+            </Link>
+            <Link className=" whatsapp bg-light  rounded p-1">
+              
                 <FaWhatsapp
-                  className="fs-1 "
+                  className="fs-2 "
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Follow us on Whatsapp"
                 ></FaWhatsapp>
                 <h4>Whatsapp</h4>
-              </Link>
-            </li>
-            <li className=" twitch bg-light  rounded border-0">
-              <Link>
+              
+            </Link>
+            <Link className=" twitch bg-light  rounded p-1">
+              
                 <FaTwitch
-                  className="fs-1 "
+                  className="fs-2 "
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Follow us on Twitch"
                 ></FaTwitch>
                 <h4 className="">Twitch</h4>
-              </Link>
-            </li>
+              
+            </Link>
           </div>
         </div>
       </div>

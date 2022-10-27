@@ -1,6 +1,9 @@
 .App {
   /* text-align: center; */
 }
+.dark{
+  background-color: gray;
+}
 .App a {
   text-decoration: none;
   color: #282c34;

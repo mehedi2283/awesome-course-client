@@ -32,7 +32,7 @@ const Profile = () => {
   return (
     <Form
       onSubmit={handleSubmit}
-      className="w-50 border p-4 rounded shadow  mx-auto mb-4  "
+      className="w-50 border p-4 rounded shadow  mx-auto mb-4 bg-white "
     >
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

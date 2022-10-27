@@ -1,14 +1,47 @@
-.facebook a:hover{
-   color: rgb(36, 67, 240);
+.facebook{
+  
+   transition-duration: 0.3s;
 
 }
-.twitter a:hover{
-    color: rgb(104, 195, 231);
+.twitter{
+    transition-duration: 0.3s;
+
 }
-.whatsapp a:hover{
-    color: rgb(44, 141, 31);
+.whatsapp{
+    transition-duration: 0.3s;
+
+
 }
-.twitch a:hover{
-    color: rgb(82, 31, 165);
+.twitch{
+    transition-duration: 0.3s;
+
 }
  
+.facebook:hover{
+   color: rgb(36, 67, 240);
+   transform: scale(1.1);
+   border: 2px solid rgb(36, 67, 240);
+
+}
+.twitter:hover{
+   transform: scale(1.1);
+   color: rgb(104, 195, 231);
+   border: 2px solid;
+
+}
+.whatsapp:hover{
+    color: rgb(44, 141, 31);
+   transform: scale(1.1);
+   border: 2px solid;
+
+
+}
+.twitch:hover{
+    color: rgb(82, 31, 165);
+   transform: scale(1.1);
+   border: 2px solid;
+
+
+}
+ 
+

@@ -3,23 +3,24 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+// import AuthProvider, { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { Image } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
 import "./Header.css";
+import { AuthContext } from './../../context/AuthProvider/AuthProvider';
 
 function Header() {
   const [active, setActive] = useState(true);
   const [style, setStyle] = useState();
   const navigate = useNavigate();
 
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut,handleTheme } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut();
     toast.success("Successfully logged out");
-    navigate("/login");
+    navigate("/home");
   };
 
   let activeStyle = {
@@ -36,6 +37,10 @@ function Header() {
   //  if(active){
   //   setStyle(activeStyle)
   //  }
+
+
+   
+
 
   return (
     <Navbar bg="light" expand="lg" className="mb-5" sticky="top">
@@ -70,13 +75,21 @@ function Header() {
           >
             F&Q
           </NavLink>
-          <NavLink
-            className="px-3 py-2 border border-dark rounded-3 link"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            to="/ok"
-          >
-            Dark Mode
-          </NavLink>
+          <div >
+      <div className="container">
+        <span >☀︎</span>
+        <div className="switch-checkbox">
+          <label className="switch">
+            <input type="checkbox" onClick={()=>handleTheme()} />
+            <span className="slider round"> </span>
+          </label>
+        </div>
+        <span >☽</span>
+      </div>
+      {/* <div>
+        <h1>Cool its {darkMode ? "Dark" : "Light"} Mode </h1>
+      </div> */}
+    </div>
         </Nav>
         <Nav className="align-items-center">
           <Link to={`${!user?'/login' :'/profile'}`}>
@@ -95,7 +108,7 @@ function Header() {
               <>
                 <Link to="/profile">
                   
-                  <span className="ms-2 ">{user?.displayName}</span>
+                  <span className="ms-2 fs-5 ">{user?.displayName}</span>
                 </Link>
                 <Button
                   className="ms-4"

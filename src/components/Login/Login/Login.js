@@ -5,56 +5,23 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from './../../../context/AuthProvider/AuthProvider';
-import {
-    FaGoogle,
-    FaGithub,
-    // FaFacebook,
-    // FaTwitter,
-    // FaWhatsapp,
-    // FaTwitch,
-  } from "react-icons/fa";
-import { ButtonGroup } from "react-bootstrap";
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";    
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth"; 
+import { ButtonGroup } from 'react-bootstrap';
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-    const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
-  const { providerLogin } = useContext(AuthContext);
-  const googleProvider = new GoogleAuthProvider();
-  const giProvider = new GithubAuthProvider();
-
-
-  const handleGoodleSignIn = () => {
-    providerLogin(googleProvider)
-      .then((result) => {
-        const user = result.user;
-        console.log(`user`, user);
-        navigate(from, { replace: true });
-          toast.success("Login Successful");
-      })
-      .catch((error) => {
-        console.error(`error`, error);
-      });
-  };
-  const handleGitSignIn = () => {
-    providerLogin(giProvider)
-      .then((result) => {
-        const user = result.user;
-        console.log(`user`, user);
-        navigate(from, { replace: true });
-          toast.success("Login Successful");
-      })
-      .catch((error) => {
-        console.error(`error`, error);
-      });
-  };
 
   const [error, setError] = useState("");
   const [check, setCheck] = useState(false);
   const [red, setRed] = useState('btn-danger');
   
-  const { signIn,logOut } = useContext(AuthContext);
+  const { signIn,logOut,providerLogin } = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -89,11 +56,35 @@ const Login = () => {
       setRed('btn-success')
     }
   }
+  const handleGoogleSignIn = () => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(`user`, user);
+        navigate(from, { replace: true });
+          toast.success("Login Successful");
+      })
+      .catch((error) => {
+        console.error(`error`, error);
+      });
+  };
+  const handleGithubSignIn = () => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(`user`, user);
+        navigate(from, { replace: true });
+          toast.success("Login Successful");
+      })
+      .catch((error) => {
+        console.error(`error`, error);
+      });
+  };
 
   return (
     <Form
       onSubmit={handleSubmit}
-      className="border p-4 rounded shadow w-50 mx-auto mb-4  "
+      className="border p-4 rounded shadow w-50 mx-auto mb-4 bg-white "
     >
       <h2 className="text-center">Login</h2>
       <hr />
@@ -128,7 +119,7 @@ const Login = () => {
           type="checkbox"
           label={
             <>
-              Accept
+              Accept <Link to="/terms">terms and conditons.</Link>
             </>
           }
         />
@@ -143,22 +134,20 @@ const Login = () => {
       <p className="link">
         Don't have an account? <Link to="/register">Register</Link> from here.
       </p>
-      <div className="text-center">
-      <h4 >OR</h4>
-      <h5>Login with</h5>
+      <hr />
       <ButtonGroup vertical className="shadow w-100 rounded p-2">
         <Button
-          onClick={handleGoodleSignIn}
+          onClick={handleGoogleSignIn}
           className="mb-4 rounded"
           variant="outline-primary"
         >
           <FaGoogle></FaGoogle> <strong>Login with Google</strong>
         </Button>
-        <Button onClick={handleGitSignIn} variant="outline-secondary" className=" rounded">
+        <Button onClick={handleGithubSignIn} variant="outline-secondary" className=" rounded">
           <FaGithub></FaGithub> <strong>Login with GitHub</strong>
         </Button>
       </ButtonGroup>
-      </div>
+
     </Form>
   );
 };
