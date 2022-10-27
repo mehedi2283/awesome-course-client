@@ -131,7 +131,7 @@ const Login = () => {
       <Form.Text className="text-danger fw-bold">
         <p>{error}</p>
       </Form.Text>
-      <p className="link">
+      <p className="link9">
         Don't have an account? <Link to="/register">Register</Link> from here.
       </p>
       <hr />
