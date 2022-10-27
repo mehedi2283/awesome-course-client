@@ -1,19 +1,18 @@
-import { Button, ToggleButton } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import toast from "react-hot-toast";
-// import AuthProvider, { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { Image } from "react-bootstrap";
+import { GiSecretBook } from "react-icons/gi";
 import { FaUserCircle } from "react-icons/fa";
 import "./Header.css";
 import { AuthContext } from './../../context/AuthProvider/AuthProvider';
 
 function Header() {
-  const [active, setActive] = useState(true);
-  const [style, setStyle] = useState();
+ 
   const navigate = useNavigate();
 
   const { user, logOut,handleTheme } = useContext(AuthContext);
@@ -50,7 +49,7 @@ function Header() {
           to="/home"
           className="fs-5 px-3 py-2 border border-dark rounded-3 link"
         >
-          Awesome Course
+         <GiSecretBook></GiSecretBook> Awesome Course
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav justify-content-centere" />
         <Navbar.Collapse className="justify-content-evenly" id="basic-navbar-nav">
