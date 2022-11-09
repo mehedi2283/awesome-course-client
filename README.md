@@ -1,5 +1,7 @@
 # Website details 
 
+Site Name: Awesome Course
+
 * Website live link : https://awesome-course-8893a.web.app/
 * single page web app
 * used bootstrap
