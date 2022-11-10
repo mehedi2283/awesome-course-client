@@ -1,6 +1,6 @@
 # Website details 
 
-Site Name : Awesome Course 
+Site Name : Awesome Course
 
 * Website live link : https://awesome-course-8893a.web.app/
 * single page web app
@@ -9,4 +9,4 @@ Site Name : Awesome Course
 * made responsive for all devices
 * added dark and light mode
 * added pdf downloader
-* 404 route added
+* 404 route added.
